@@ -16,8 +16,13 @@
 		5BD02BB52944B25D00E5E0F2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BB42944B25D00E5E0F2 /* LoginView.swift */; };
 		5BD02BB62944B26600E5E0F2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BB42944B25D00E5E0F2 /* LoginView.swift */; };
 		5BD02BB72944B26700E5E0F2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BB42944B25D00E5E0F2 /* LoginView.swift */; };
-		5BD02BB92944DF3600E5E0F2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BB82944DF3600E5E0F2 /* LoginViewModel.swift */; };
+		5BD02BB92944DF3600E5E0F2 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BB82944DF3600E5E0F2 /* RootViewModel.swift */; };
 		5BD02BBB2944DF4E00E5E0F2 /* StatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BBA2944DF4E00E5E0F2 /* StatusModel.swift */; };
+		5BD02BBD2944E10D00E5E0F2 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BBC2944E10D00E5E0F2 /* NetworkHelper.swift */; };
+		5BD02BBF2944F15E00E5E0F2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BBE2944F15E00E5E0F2 /* RootView.swift */; };
+		5BD02BC22944F4DB00E5E0F2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BC12944F4DB00E5E0F2 /* LoadingView.swift */; };
+		5BD02BC32944F4DB00E5E0F2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BC12944F4DB00E5E0F2 /* LoadingView.swift */; };
+		5BD02BC42944F4DB00E5E0F2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BC12944F4DB00E5E0F2 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +53,11 @@
 		5BD02B9F2944AA2F00E5E0F2 /* FinalSuperpoderesIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalSuperpoderesIOSUITests.swift; sourceTree = "<group>"; };
 		5BD02BA12944AA2F00E5E0F2 /* FinalSuperpoderesIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalSuperpoderesIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5BD02BB42944B25D00E5E0F2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		5BD02BB82944DF3600E5E0F2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5BD02BB82944DF3600E5E0F2 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		5BD02BBA2944DF4E00E5E0F2 /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
+		5BD02BBC2944E10D00E5E0F2 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		5BD02BBE2944F15E00E5E0F2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		5BD02BC12944F4DB00E5E0F2 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +148,7 @@
 		5BD02BAE2944B1E500E5E0F2 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				5BD02BB82944DF3600E5E0F2 /* LoginViewModel.swift */,
+				5BD02BB82944DF3600E5E0F2 /* RootViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -149,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				5BD02BB32944B24900E5E0F2 /* Login */,
+				5BD02BBE2944F15E00E5E0F2 /* RootView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,6 +173,7 @@
 		5BD02BB12944B1FE00E5E0F2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5BD02BBC2944E10D00E5E0F2 /* NetworkHelper.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -178,9 +188,18 @@
 		5BD02BB32944B24900E5E0F2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				5BD02BC02944F4C700E5E0F2 /* Tools */,
 				5BD02BB42944B25D00E5E0F2 /* LoginView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		5BD02BC02944F4C700E5E0F2 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				5BD02BC12944F4DB00E5E0F2 /* LoadingView.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,8 +334,11 @@
 			files = (
 				5BD02BB52944B25D00E5E0F2 /* LoginView.swift in Sources */,
 				5BD02BBB2944DF4E00E5E0F2 /* StatusModel.swift in Sources */,
+				5BD02BBF2944F15E00E5E0F2 /* RootView.swift in Sources */,
+				5BD02BBD2944E10D00E5E0F2 /* NetworkHelper.swift in Sources */,
 				5BD02B852944AA2D00E5E0F2 /* FinalSuperpoderesIOSApp.swift in Sources */,
-				5BD02BB92944DF3600E5E0F2 /* LoginViewModel.swift in Sources */,
+				5BD02BC22944F4DB00E5E0F2 /* LoadingView.swift in Sources */,
+				5BD02BB92944DF3600E5E0F2 /* RootViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +348,7 @@
 			files = (
 				5BD02BB62944B26600E5E0F2 /* LoginView.swift in Sources */,
 				5BD02B962944AA2F00E5E0F2 /* FinalSuperpoderesIOSTests.swift in Sources */,
+				5BD02BC32944F4DB00E5E0F2 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BD02BB72944B26700E5E0F2 /* LoginView.swift in Sources */,
+				5BD02BC42944F4DB00E5E0F2 /* LoadingView.swift in Sources */,
 				5BD02BA22944AA2F00E5E0F2 /* FinalSuperpoderesIOSUITestsLaunchTests.swift in Sources */,
 				5BD02BA02944AA2F00E5E0F2 /* FinalSuperpoderesIOSUITests.swift in Sources */,
 			);

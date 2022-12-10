@@ -10,6 +10,10 @@ import SwiftUI
 
 
 struct LoginView: View {
+    
+    @EnvironmentObject private var rootviewModel: RootViewModel
+    
+    
     var body: some View {
         ZStack {
             //MARK: Imagen FONDO
@@ -37,7 +41,10 @@ struct LoginView: View {
                 //BOTON PARA ENTRAR
                 Button {
                     //TODO: Pasar a la vista de HOME
-                } label: {
+                    rootviewModel.loginTest()
+                }label:
+               
+                {
                     Text("ENTRAR")
                         .padding()
                         .font(.custom("", size: 30))
@@ -64,5 +71,6 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+            .environmentObject(RootViewModel())
     }
 }

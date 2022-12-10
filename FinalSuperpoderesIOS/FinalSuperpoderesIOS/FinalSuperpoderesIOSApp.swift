@@ -10,9 +10,12 @@ import SwiftUI
 @main
 struct FinalSuperpoderesIOSApp: App {
     
+    @StateObject var rootViewModel = RootViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            RootView()
+                .environmentObject(rootViewModel)
         }
     }
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 enum Status {
-    case login, loading, loaded
+    case login, loading, loaded, error(error: String)
 }
