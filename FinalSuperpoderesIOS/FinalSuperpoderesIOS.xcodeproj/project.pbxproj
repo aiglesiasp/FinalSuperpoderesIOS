@@ -16,6 +16,8 @@
 		5BD02BB52944B25D00E5E0F2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BB42944B25D00E5E0F2 /* LoginView.swift */; };
 		5BD02BB62944B26600E5E0F2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BB42944B25D00E5E0F2 /* LoginView.swift */; };
 		5BD02BB72944B26700E5E0F2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BB42944B25D00E5E0F2 /* LoginView.swift */; };
+		5BD02BB92944DF3600E5E0F2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BB82944DF3600E5E0F2 /* LoginViewModel.swift */; };
+		5BD02BBB2944DF4E00E5E0F2 /* StatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BBA2944DF4E00E5E0F2 /* StatusModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		5BD02B9F2944AA2F00E5E0F2 /* FinalSuperpoderesIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalSuperpoderesIOSUITests.swift; sourceTree = "<group>"; };
 		5BD02BA12944AA2F00E5E0F2 /* FinalSuperpoderesIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalSuperpoderesIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5BD02BB42944B25D00E5E0F2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5BD02BB82944DF3600E5E0F2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5BD02BBA2944DF4E00E5E0F2 /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 		5BD02BAE2944B1E500E5E0F2 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				5BD02BB82944DF3600E5E0F2 /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 		5BD02BB02944B1F500E5E0F2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5BD02BBA2944DF4E00E5E0F2 /* StatusModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -308,7 +314,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BD02BB52944B25D00E5E0F2 /* LoginView.swift in Sources */,
+				5BD02BBB2944DF4E00E5E0F2 /* StatusModel.swift in Sources */,
 				5BD02B852944AA2D00E5E0F2 /* FinalSuperpoderesIOSApp.swift in Sources */,
+				5BD02BB92944DF3600E5E0F2 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
