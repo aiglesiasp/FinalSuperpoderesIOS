@@ -15,10 +15,18 @@ struct HomeView: View {
             List {
                 if let heros = homeViewModel.heros {
                     ForEach(heros) { hero in
-                        Text(hero.name)
+                        NavigationLink {
+                            //Navegar al detalle de las series
+                            SeriesView(seriesViewModel: SeriesViewModel(testing: true))
+                        } label: {
+                            //Detalle de la row
+                            HomeRowView(hero: hero)
+                        }
+
                     }
                 }
             }
+        
         }
     }
 }

@@ -65,13 +65,13 @@ final class HomeViewModel: ObservableObject {
     func getHerosTesting() {
         //Crear array de HEROES
         let hero1 = Heros(id: 1017857,
-                         name: "Peggy Carter (Captain Carter)",
+                         name: "BATMAN",
                          resultDescription: "",
                          modified: "2022-05-03T11:41:04-0400",
-                         thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available", thumbnailExtension: "jpg"),
+                         thumbnail: Thumbnail(path: "https://w0.peakpx.com/wallpaper/516/285/HD-wallpaper-dark-batman-batman-superheroes-artstation.jpg", thumbnailExtension: "jpg"),
                          resourceURI: "http://gateway.marvel.com/v1/public/characters/1017857",
                          comics: Comics(available: 16, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/comics", items: [ComicsItem(resourceURI: "http://gateway.marvel.com/v1/public/comics/55840", name: "Agent Carter: S.H.I.E.L.D. 50th Anniversary (2015) #1")], returned: 16),
-                         series: Series(available: 8, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/series", items: [SeriesItem(resourceURI: "http://gateway.marvel.com/v1/public/series/20544", name: "Agent Carter: S.H.I.E.L.D. 50th Anniversary (2015)")], returned: 8),
+                          series: Series(id: 2, available: 8, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/series", items: [SeriesItem(resourceURI: "http://gateway.marvel.com/v1/public/series/20544", name: "Agent Carter: S.H.I.E.L.D. 50th Anniversary (2015)")], returned: 8),
                          stories: Stories(available: 16, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/stories", items: [StoriesItem(resourceURI: "http://gateway.marvel.com/v1/public/stories/89913", name: "Captain America and the First Thirteen (2011) #1", type: "cover")], returned: 16),
                          events: Events(available: 0, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/events", items: [], returned: 0),
                          urls:[URLElement(type: "detail", url: "http://marvel.com/characters/3503/peggy_carter?utm_campaign=apiRef&utm_source=cfa84e8f63e43679a5f9299c92a964a7")])
@@ -79,10 +79,10 @@ final class HomeViewModel: ObservableObject {
                          name: "SPIDERMAN",
                          resultDescription: "",
                          modified: "2022-05-03T11:41:04-0400",
-                         thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available", thumbnailExtension: "jpg"),
+                         thumbnail: Thumbnail(path: "https://img.huffingtonpost.com/asset/5c8a3eb9230000040122d972.jpeg?ops=1778_1000", thumbnailExtension: "jpg"),
                          resourceURI: "http://gateway.marvel.com/v1/public/characters/1017857",
                          comics: Comics(available: 16, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/comics", items: [ComicsItem(resourceURI: "http://gateway.marvel.com/v1/public/comics/55840", name: "Agent Carter: S.H.I.E.L.D. 50th Anniversary (2015) #1")], returned: 16),
-                         series: Series(available: 8, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/series", items: [SeriesItem(resourceURI: "http://gateway.marvel.com/v1/public/series/20544", name: "Agent Carter: S.H.I.E.L.D. 50th Anniversary (2015)")], returned: 8),
+                          series: Series(id: 3, available: 8, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/series", items: [SeriesItem(resourceURI: "http://gateway.marvel.com/v1/public/series/20544", name: "Agent Carter: S.H.I.E.L.D. 50th Anniversary (2015)")], returned: 8),
                          stories: Stories(available: 16, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/stories", items: [StoriesItem(resourceURI: "http://gateway.marvel.com/v1/public/stories/89913", name: "Captain America and the First Thirteen (2011) #1", type: "cover")], returned: 16),
                          events: Events(available: 0, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/events", items: [], returned: 0),
                          urls:[URLElement(type: "detail", url: "http://marvel.com/characters/3503/peggy_carter?utm_campaign=apiRef&utm_source=cfa84e8f63e43679a5f9299c92a964a7")])
@@ -90,10 +90,10 @@ final class HomeViewModel: ObservableObject {
                          name: "HULK",
                          resultDescription: "",
                          modified: "2022-05-03T11:41:04-0400",
-                         thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available", thumbnailExtension: "jpg"),
+                         thumbnail: Thumbnail(path: "https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2020/05/08/15889185676201.jpg", thumbnailExtension: "jpg"),
                          resourceURI: "http://gateway.marvel.com/v1/public/characters/1017857",
                          comics: Comics(available: 16, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/comics", items: [ComicsItem(resourceURI: "http://gateway.marvel.com/v1/public/comics/55840", name: "Agent Carter: S.H.I.E.L.D. 50th Anniversary (2015) #1")], returned: 16),
-                         series: Series(available: 8, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/series", items: [SeriesItem(resourceURI: "http://gateway.marvel.com/v1/public/series/20544", name: "Agent Carter: S.H.I.E.L.D. 50th Anniversary (2015)")], returned: 8),
+                          series: Series(id: 5, available: 8, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/series", items: [SeriesItem(resourceURI: "http://gateway.marvel.com/v1/public/series/20544", name: "Agent Carter: S.H.I.E.L.D. 50th Anniversary (2015)")], returned: 8),
                          stories: Stories(available: 16, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/stories", items: [StoriesItem(resourceURI: "http://gateway.marvel.com/v1/public/stories/89913", name: "Captain America and the First Thirteen (2011) #1", type: "cover")], returned: 16),
                          events: Events(available: 0, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/events", items: [], returned: 0),
                          urls:[URLElement(type: "detail", url: "http://marvel.com/characters/3503/peggy_carter?utm_campaign=apiRef&utm_source=cfa84e8f63e43679a5f9299c92a964a7")])

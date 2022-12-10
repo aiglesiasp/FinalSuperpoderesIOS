@@ -42,7 +42,8 @@ struct ComicsItem: Codable {
 }
 
 // MARK: - Series
-struct Series: Codable {
+struct Series: Codable, Identifiable {
+    let id: Int
     let available: Int
     let collectionURI: String
     let items: [SeriesItem]

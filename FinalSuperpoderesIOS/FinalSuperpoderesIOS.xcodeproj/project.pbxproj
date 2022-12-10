@@ -35,6 +35,18 @@
 		5BD02BD32945065A00E5E0F2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BD22945065A00E5E0F2 /* HomeViewModel.swift */; };
 		5BD02BD42945065A00E5E0F2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BD22945065A00E5E0F2 /* HomeViewModel.swift */; };
 		5BD02BD52945065A00E5E0F2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BD22945065A00E5E0F2 /* HomeViewModel.swift */; };
+		5BD02BD829450E2000E5E0F2 /* HomeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BD729450E2000E5E0F2 /* HomeRowView.swift */; };
+		5BD02BD929450E2000E5E0F2 /* HomeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BD729450E2000E5E0F2 /* HomeRowView.swift */; };
+		5BD02BDA29450E2000E5E0F2 /* HomeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BD729450E2000E5E0F2 /* HomeRowView.swift */; };
+		5BD02BDC29451BE900E5E0F2 /* SeriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BDB29451BE900E5E0F2 /* SeriesView.swift */; };
+		5BD02BDD29451BE900E5E0F2 /* SeriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BDB29451BE900E5E0F2 /* SeriesView.swift */; };
+		5BD02BDE29451BE900E5E0F2 /* SeriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BDB29451BE900E5E0F2 /* SeriesView.swift */; };
+		5BD02BE029451C2600E5E0F2 /* SeriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BDF29451C2600E5E0F2 /* SeriesViewModel.swift */; };
+		5BD02BE129451C2600E5E0F2 /* SeriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BDF29451C2600E5E0F2 /* SeriesViewModel.swift */; };
+		5BD02BE229451C2600E5E0F2 /* SeriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BDF29451C2600E5E0F2 /* SeriesViewModel.swift */; };
+		5BD02BE42945203800E5E0F2 /* SeriesRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BE32945203800E5E0F2 /* SeriesRowView.swift */; };
+		5BD02BE52945203800E5E0F2 /* SeriesRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BE32945203800E5E0F2 /* SeriesRowView.swift */; };
+		5BD02BE62945203800E5E0F2 /* SeriesRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BE32945203800E5E0F2 /* SeriesRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +86,10 @@
 		5BD02BCA2944FB6300E5E0F2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5BD02BCE2944FC2300E5E0F2 /* HerosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerosModel.swift; sourceTree = "<group>"; };
 		5BD02BD22945065A00E5E0F2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		5BD02BD729450E2000E5E0F2 /* HomeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRowView.swift; sourceTree = "<group>"; };
+		5BD02BDB29451BE900E5E0F2 /* SeriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesView.swift; sourceTree = "<group>"; };
+		5BD02BDF29451C2600E5E0F2 /* SeriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewModel.swift; sourceTree = "<group>"; };
+		5BD02BE32945203800E5E0F2 /* SeriesRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +182,7 @@
 			children = (
 				5BD02BB82944DF3600E5E0F2 /* RootViewModel.swift */,
 				5BD02BD22945065A00E5E0F2 /* HomeViewModel.swift */,
+				5BD02BDF29451C2600E5E0F2 /* SeriesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -227,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				5BD02BCA2944FB6300E5E0F2 /* HomeView.swift */,
+				5BD02BD729450E2000E5E0F2 /* HomeRowView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -234,6 +252,8 @@
 		5BD02BD629450B8900E5E0F2 /* Series */ = {
 			isa = PBXGroup;
 			children = (
+				5BD02BDB29451BE900E5E0F2 /* SeriesView.swift */,
+				5BD02BE32945203800E5E0F2 /* SeriesRowView.swift */,
 			);
 			path = Series;
 			sourceTree = "<group>";
@@ -375,9 +395,13 @@
 				5BD02BCF2944FC2300E5E0F2 /* HerosModel.swift in Sources */,
 				5BD02BBF2944F15E00E5E0F2 /* RootView.swift in Sources */,
 				5BD02BBD2944E10D00E5E0F2 /* NetworkHelper.swift in Sources */,
+				5BD02BE029451C2600E5E0F2 /* SeriesViewModel.swift in Sources */,
 				5BD02B852944AA2D00E5E0F2 /* FinalSuperpoderesIOSApp.swift in Sources */,
+				5BD02BD829450E2000E5E0F2 /* HomeRowView.swift in Sources */,
 				5BD02BC22944F4DB00E5E0F2 /* LoadingView.swift in Sources */,
+				5BD02BE42945203800E5E0F2 /* SeriesRowView.swift in Sources */,
 				5BD02BB92944DF3600E5E0F2 /* RootViewModel.swift in Sources */,
+				5BD02BDC29451BE900E5E0F2 /* SeriesView.swift in Sources */,
 				5BD02BC62944F72700E5E0F2 /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,13 +410,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD02BD929450E2000E5E0F2 /* HomeRowView.swift in Sources */,
 				5BD02BB62944B26600E5E0F2 /* LoginView.swift in Sources */,
+				5BD02BDD29451BE900E5E0F2 /* SeriesView.swift in Sources */,
 				5BD02B962944AA2F00E5E0F2 /* FinalSuperpoderesIOSTests.swift in Sources */,
 				5BD02BD42945065A00E5E0F2 /* HomeViewModel.swift in Sources */,
 				5BD02BC32944F4DB00E5E0F2 /* LoadingView.swift in Sources */,
 				5BD02BD02944FC2300E5E0F2 /* HerosModel.swift in Sources */,
+				5BD02BE129451C2600E5E0F2 /* SeriesViewModel.swift in Sources */,
 				5BD02BCC2944FB6300E5E0F2 /* HomeView.swift in Sources */,
 				5BD02BC72944F72700E5E0F2 /* ErrorView.swift in Sources */,
+				5BD02BE52945203800E5E0F2 /* SeriesRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,9 +433,13 @@
 				5BD02BC42944F4DB00E5E0F2 /* LoadingView.swift in Sources */,
 				5BD02BD52945065A00E5E0F2 /* HomeViewModel.swift in Sources */,
 				5BD02BCD2944FB6300E5E0F2 /* HomeView.swift in Sources */,
+				5BD02BDA29450E2000E5E0F2 /* HomeRowView.swift in Sources */,
 				5BD02BD12944FC2300E5E0F2 /* HerosModel.swift in Sources */,
 				5BD02BA22944AA2F00E5E0F2 /* FinalSuperpoderesIOSUITestsLaunchTests.swift in Sources */,
+				5BD02BE62945203800E5E0F2 /* SeriesRowView.swift in Sources */,
 				5BD02BA02944AA2F00E5E0F2 /* FinalSuperpoderesIOSUITests.swift in Sources */,
+				5BD02BDE29451BE900E5E0F2 /* SeriesView.swift in Sources */,
+				5BD02BE229451C2600E5E0F2 /* SeriesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
