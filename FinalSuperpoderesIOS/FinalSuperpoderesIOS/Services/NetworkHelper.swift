@@ -4,15 +4,16 @@
 //
 //  Created by Aitor Iglesias Pubill on 10/12/22.
 //
+let publicKey = "cfa84e8f63e43679a5f9299c92a964a7"
+let privateKey = "eec98a5800df793ca31812187b3ae75e91597d9a"
 
 import Foundation
 
 //Creo el servidor
 let server = "https://gateway.marvel.com"
-let publicKey = "cfa84e8f63e43679a5f9299c92a964a7"
-let privateKey = "eec98a5800df793ca31812187b3ae75e91597d9a"
 let ts = "1"
 let hash = "6ee3533574aa152e469b939894ec2f49"
+let apiKey = "cfa84e8f63e43679a5f9299c92a964a7"
 
 //Creo metodos
 struct HTTPMethods {
@@ -44,38 +45,74 @@ struct Parametro {
 //MARK: NETWORK HELPER
 struct NetworkHelper {
     
-    //MARK: EJEMPLO FUNCION LOGIN
-    func getSessionLogin(user: String, password: String) -> URLRequest {
-        let urlCad: String = "\(server)\(Endpoints.heroesList.rawValue)"
-        //Crear el USER:PASSWORD
-        let encondeCredential = "\(user):\(password)".data(using: .utf8)?.base64EncodedString()
-        var segCredential = ""
-        if let credential = encondeCredential {
-            segCredential = "Basic \(credential)"
-        }
-        
-        var request = URLRequest(url: URL(string: urlCad)!)
-        request.httpMethod = HTTPMethods.post
-        //request.addValue(HTTPMethods.content, forHTTPHeaderField: "Content-type")
-        //request.addValue(segCredential, forHTTPHeaderField: "Authorization")
-        
-        return request
+    
+    //MARK: FUNCION PARA GENERARME URL MONTADAS
+    private func createURLString(endpoint: String) -> String {
+        let initialURL = server
+        let endpointURL = initialURL + "\(endpoint)"
+        let finalURL = endpointURL + "?apikey=\(apiKey)&ts=\(ts)&hash=\(hash)"
+        return finalURL
         
     }
     
-    //MARK: - FUNCION OBTENER LISTA COMPLETA HEROES
-    func getSessionHeroes(filter: [Parametro]?) -> URLRequest? {
-        //Montamos URL
-        
-        
-        let urlCad: String = "\(server)\(Endpoints.heroesList.rawValue)"
-        //Creamos REQUEST
+    //MARK: FUNCION CAPTURAR HEROES
+    func getSessionHeroes() -> URLRequest {
+        var urlCad: String = createURLString(endpoint: Endpoints.heroesList.rawValue)
+        urlCad = urlCad + "&orderBy=-modified"
         var request = URLRequest(url: URL(string: urlCad)!)
         request.httpMethod = HTTPMethods.get
-        request.addValue(ts, forHTTPHeaderField: "ts")
-        request.addValue(hash, forHTTPHeaderField: "hash")
-        request.addValue(publicKey, forHTTPHeaderField: "publicKey")
+        request.addValue(HTTPMethods.content, forHTTPHeaderField: "Content-type")
+        return request
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    //---------------------------------------------------------------------
+    //PROFESOR
+    private func getURLPrueba(endpoint:String, subPath:String = "") -> String{
+        var url = server
         
+        url += "\(endpoint)\(subPath)" //endpoint de la uRL. Subpath solo es para series.
+        url += "?apikey=\(apiKey)"
+        url += "&ts=\(ts)"
+        url += "&hash=\(hash)"
+        return url
+    }
+    
+    func getSessionMarvelCharactersPrueba() -> URLRequest {
+        var urlCad : String = getURLPrueba(endpoint: Endpoints.heroesList.rawValue)
+        urlCad += "&orderBy=-modified"  //para ordenacion descendente , asi se ven los ultimos superheroes
+        
+        // creamos el request
+        var request : URLRequest = URLRequest(url: URL(string: urlCad)!)
+        request.httpMethod = HTTPMethods.get
+        request.addValue(HTTPMethods.content, forHTTPHeaderField: "Content-type") //Header aplication JSON
+        return request
+    }
+    
+    func getSessionMarvelSeriesPrueba(idHero:Int) -> URLRequest {
+        var urlCad : String = getURLPrueba(endpoint: Endpoints.heroesList.rawValue,subPath: "/\(idHero)/series")
+        urlCad += "&orderBy=-modified"  //para ordenacion descendente , asi se ven los ultimos series
+        // creamos el request
+        var request : URLRequest = URLRequest(url: URL(string: urlCad)!)
+        request.httpMethod = HTTPMethods.get
+        request.addValue(HTTPMethods.content, forHTTPHeaderField: "Content-type") //Header aplication JSON
         return request
     }
 }

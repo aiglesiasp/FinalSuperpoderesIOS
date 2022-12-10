@@ -16,9 +16,9 @@ struct RootView: View {
         case Status.loading:
             LoadingView()
         case Status.error(error: let errorString):
-            Text("ERROR VIENE \(errorString)")
+            ErrorView(errorString: errorString)
         case Status.loaded:
-            Text("CARGADO FINAL")
+            HomeView(homeViewModel: HomeViewModel(testing: true))
         }
     }
 }

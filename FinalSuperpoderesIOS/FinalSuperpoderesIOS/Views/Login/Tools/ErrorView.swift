@@ -1,5 +1,5 @@
 //
-//  LoginView.swift
+//  ErrorView.swift
 //  FinalSuperpoderesIOS
 //
 //  Created by Aitor Iglesias Pubill on 10/12/22.
@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-
-
-struct LoginView: View {
-    
+struct ErrorView: View {
     @EnvironmentObject private var rootviewModel: RootViewModel
+    private var errorString: String
     
+    init(errorString: String) {
+        self.errorString = errorString
+    }
     
     var body: some View {
         ZStack {
@@ -30,7 +31,7 @@ struct LoginView: View {
             //MARK: TITULO
             //TEXTO
             VStack {
-                //TEXTO
+                //TITULO
                 Image(decorative: "marvelTitle")
                     .resizable()
                     .scaledToFit() //escalar
@@ -38,14 +39,19 @@ struct LoginView: View {
                     .opacity(0.4)
                     .padding(.top, 150)
                 Spacer()
+                Text(errorString)
+                    .font(.title3)
+                    .background(.red)
+                    .frame(height: 30)
+                    .foregroundColor(.black)
+                    .bold()
                 //BOTON PARA ENTRAR
                 Button {
-                    //TODO: Pasar a la vista de HOME
-                    rootviewModel.loginSimulator()
+                    //volver login
+                    rootviewModel.status = .login
                 }label:
-               
                 {
-                    Text("ENTRAR")
+                    Text("VOLVER LOGIN")
                         .padding()
                         .font(.custom("", size: 30))
                         .bold()
@@ -57,20 +63,14 @@ struct LoginView: View {
                         .shadow(radius: 1.0, x:10, y:10)
                 }
                 Spacer()
-
-                }
             }
+        }
         .ignoresSafeArea()
-        
     }
 }
 
-
-
-//MARK: PREVIEW
-struct LoginView_Previews: PreviewProvider {
+struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
-            .environmentObject(RootViewModel())
+        ErrorView(errorString: "PRUEBA DE ERROR")
     }
 }
