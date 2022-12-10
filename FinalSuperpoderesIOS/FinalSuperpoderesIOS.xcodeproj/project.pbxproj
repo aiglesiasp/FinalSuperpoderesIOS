@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		5BD02B852944AA2D00E5E0F2 /* FinalSuperpoderesIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02B842944AA2D00E5E0F2 /* FinalSuperpoderesIOSApp.swift */; };
-		5BD02B872944AA2D00E5E0F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02B862944AA2D00E5E0F2 /* ContentView.swift */; };
 		5BD02B892944AA2F00E5E0F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD02B882944AA2F00E5E0F2 /* Assets.xcassets */; };
 		5BD02B8C2944AA2F00E5E0F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD02B8B2944AA2F00E5E0F2 /* Preview Assets.xcassets */; };
 		5BD02B962944AA2F00E5E0F2 /* FinalSuperpoderesIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02B952944AA2F00E5E0F2 /* FinalSuperpoderesIOSTests.swift */; };
 		5BD02BA02944AA2F00E5E0F2 /* FinalSuperpoderesIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02B9F2944AA2F00E5E0F2 /* FinalSuperpoderesIOSUITests.swift */; };
 		5BD02BA22944AA2F00E5E0F2 /* FinalSuperpoderesIOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BA12944AA2F00E5E0F2 /* FinalSuperpoderesIOSUITestsLaunchTests.swift */; };
+		5BD02BB52944B25D00E5E0F2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BB42944B25D00E5E0F2 /* LoginView.swift */; };
+		5BD02BB62944B26600E5E0F2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BB42944B25D00E5E0F2 /* LoginView.swift */; };
+		5BD02BB72944B26700E5E0F2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BB42944B25D00E5E0F2 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,6 @@
 /* Begin PBXFileReference section */
 		5BD02B812944AA2D00E5E0F2 /* FinalSuperpoderesIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalSuperpoderesIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BD02B842944AA2D00E5E0F2 /* FinalSuperpoderesIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalSuperpoderesIOSApp.swift; sourceTree = "<group>"; };
-		5BD02B862944AA2D00E5E0F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5BD02B882944AA2F00E5E0F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BD02B8B2944AA2F00E5E0F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5BD02B912944AA2F00E5E0F2 /* FinalSuperpoderesIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalSuperpoderesIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +45,7 @@
 		5BD02B9B2944AA2F00E5E0F2 /* FinalSuperpoderesIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalSuperpoderesIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BD02B9F2944AA2F00E5E0F2 /* FinalSuperpoderesIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalSuperpoderesIOSUITests.swift; sourceTree = "<group>"; };
 		5BD02BA12944AA2F00E5E0F2 /* FinalSuperpoderesIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalSuperpoderesIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5BD02BB42944B25D00E5E0F2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +96,14 @@
 		5BD02B832944AA2D00E5E0F2 /* FinalSuperpoderesIOS */ = {
 			isa = PBXGroup;
 			children = (
-				5BD02B842944AA2D00E5E0F2 /* FinalSuperpoderesIOSApp.swift */,
-				5BD02B862944AA2D00E5E0F2 /* ContentView.swift */,
-				5BD02B882944AA2F00E5E0F2 /* Assets.xcassets */,
 				5BD02B8A2944AA2F00E5E0F2 /* Preview Content */,
+				5BD02B842944AA2D00E5E0F2 /* FinalSuperpoderesIOSApp.swift */,
+				5BD02B882944AA2F00E5E0F2 /* Assets.xcassets */,
+				5BD02BB22944B20600E5E0F2 /* Tools */,
+				5BD02BB12944B1FE00E5E0F2 /* Services */,
+				5BD02BB02944B1F500E5E0F2 /* Models */,
+				5BD02BAF2944B1EE00E5E0F2 /* Views */,
+				5BD02BAE2944B1E500E5E0F2 /* ViewModels */,
 			);
 			path = FinalSuperpoderesIOS;
 			sourceTree = "<group>";
@@ -125,6 +131,50 @@
 				5BD02BA12944AA2F00E5E0F2 /* FinalSuperpoderesIOSUITestsLaunchTests.swift */,
 			);
 			path = FinalSuperpoderesIOSUITests;
+			sourceTree = "<group>";
+		};
+		5BD02BAE2944B1E500E5E0F2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5BD02BAF2944B1EE00E5E0F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5BD02BB32944B24900E5E0F2 /* Login */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5BD02BB02944B1F500E5E0F2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5BD02BB12944B1FE00E5E0F2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5BD02BB22944B20600E5E0F2 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		5BD02BB32944B24900E5E0F2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5BD02BB42944B25D00E5E0F2 /* LoginView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BD02B872944AA2D00E5E0F2 /* ContentView.swift in Sources */,
+				5BD02BB52944B25D00E5E0F2 /* LoginView.swift in Sources */,
 				5BD02B852944AA2D00E5E0F2 /* FinalSuperpoderesIOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD02BB62944B26600E5E0F2 /* LoginView.swift in Sources */,
 				5BD02B962944AA2F00E5E0F2 /* FinalSuperpoderesIOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD02BB72944B26700E5E0F2 /* LoginView.swift in Sources */,
 				5BD02BA22944AA2F00E5E0F2 /* FinalSuperpoderesIOSUITestsLaunchTests.swift in Sources */,
 				5BD02BA02944AA2F00E5E0F2 /* FinalSuperpoderesIOSUITests.swift in Sources */,
 			);

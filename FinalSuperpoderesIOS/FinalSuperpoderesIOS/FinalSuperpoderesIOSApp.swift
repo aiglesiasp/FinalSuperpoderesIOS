@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct FinalSuperpoderesIOSApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView()
         }
     }
 }
