@@ -21,4 +21,9 @@ final class RootViewModel: ObservableObject {
             self.status = .loaded
         }
     }
+    
+    //MARK: FUNCION CERRAR SESION
+    func closeSession() {
+        self.status = .login
+    }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var homeViewModel: HomeViewModel
+    @EnvironmentObject var rootViewModel: RootViewModel
     
     var body: some View {
         NavigationStack {
@@ -24,6 +25,24 @@ struct HomeView: View {
                         }
 
                     }
+                }
+            }
+            .toolbar{
+                ToolbarItem (placement: .navigationBarTrailing) {
+                    Button {
+                        rootViewModel.closeSession()
+                    } label: {
+                        HStack {
+                            Image(systemName: "xmark.circle")
+                                .font(.caption)
+                                .foregroundColor(.blue)
+                            Text("Close Session")
+                                .font(.caption)
+                                .foregroundColor(.blue)
+                        }
+                        
+                    }
+
                 }
             }
         
