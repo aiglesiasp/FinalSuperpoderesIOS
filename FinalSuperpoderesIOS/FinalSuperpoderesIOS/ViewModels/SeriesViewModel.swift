@@ -10,7 +10,7 @@ import Combine
 
 final class SeriesViewModel: ObservableObject {
     
-    @Published var series: [Series]?
+    @Published var series: [Serie]?
     @Published var status = Status.login
     
     private var suscriptor = Set<AnyCancellable>()
@@ -32,13 +32,28 @@ final class SeriesViewModel: ObservableObject {
     //MARK: FUNCION PARA DISEÑO/TESTING
     func getSeriesTesting() {
         //Crear array de SERIES
-        let serie1 = Series(id: 1, available: 8, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/series", items: [SeriesItem(resourceURI: "https://www.covercaratulas.com/ode/mini/divx-35156-a.jpg", name: "Agent Carter: S.H.I.E.L.D. 50th Anniversary (2015)")], returned: 8)
+        let serie1 = Serie(id: 27700,
+                           title: "Hit-Monkey By Daniel Way: Bullets & Bananas (2019)",
+                           description: "",
+                           thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available", thumbnailExtension: Extension.jpg),
+                           resourceURI: "")
+        let serie2 = Serie(id: 20815,
+                           title: "Howling Commandos of S.H.I.E.L.D. (2015 - 2016)",
+                           description: "",
+                           thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/6/b0/5d93a767070ed", thumbnailExtension: Extension.jpg),
+                           resourceURI: "")
+        let serie3 = Serie(id: 20617,
+                           title: "Old Man Logan (2016 - 2018)",
+                           description: "",
+                           thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/7/20/58e6686c2a72f", thumbnailExtension: Extension.jpg),
+                           resourceURI: "")
+        let serie4 = Serie(id: 23970,
+                           title: "Deadpool by Daniel Way Omnibus Vol. 1 (2018)",
+                           description: "",
+                           thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available", thumbnailExtension: Extension.jpg),
+                           resourceURI: "")
         
-        let serie2 = Series(id: 2, available: 8, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/series", items: [SeriesItem(resourceURI: "http://gateway.marvel.com/v1/public/series/20544", name: "PELICULA 2")], returned: 8)
-        
-        let serie3 = Series(id: 3, available: 8, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/series", items: [SeriesItem(resourceURI: "http://gateway.marvel.com/v1/public/series/20544", name: "PELICULA 3")], returned: 8)
-        
-        self.series = [serie1, serie2, serie3]
+        self.series = [serie1, serie2, serie3, serie4]
         self.status = .loaded
     }
 }

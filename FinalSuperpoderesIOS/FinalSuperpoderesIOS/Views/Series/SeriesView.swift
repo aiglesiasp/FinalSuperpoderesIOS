@@ -18,7 +18,7 @@ struct SeriesView: View {
                 if let series = seriesViewModel.series {
                     ForEach(series) { serie in
                         NavigationLink {
-                            Text("PANTALLA DE DETALLE DE SERIES \(serie.items[0].name)")
+                            Text("PANTALLA DE DETALLE DE SERIES \(serie.title)")
                             
                         } label: {
                             //Detalle de la ROW

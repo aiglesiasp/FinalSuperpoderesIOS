@@ -42,10 +42,8 @@ struct HomeView: View {
                         }
                         
                     }
-
                 }
             }
-        
         }
     }
 }

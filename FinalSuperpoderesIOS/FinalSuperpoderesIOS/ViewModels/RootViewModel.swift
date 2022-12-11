@@ -10,7 +10,7 @@ import Combine
 
 final class RootViewModel: ObservableObject {
     @Published var status = Status.login
-    @Published var heros: [Heros]?
+    @Published var heros: [Hero]?
     
     private var suscriptors = Set<AnyCancellable>()
     

@@ -47,6 +47,9 @@
 		5BD02BE42945203800E5E0F2 /* SeriesRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BE32945203800E5E0F2 /* SeriesRowView.swift */; };
 		5BD02BE52945203800E5E0F2 /* SeriesRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BE32945203800E5E0F2 /* SeriesRowView.swift */; };
 		5BD02BE62945203800E5E0F2 /* SeriesRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BE32945203800E5E0F2 /* SeriesRowView.swift */; };
+		5BD02BEA294544CA00E5E0F2 /* ComicsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BE9294544CA00E5E0F2 /* ComicsModel.swift */; };
+		5BD02BEC294545CA00E5E0F2 /* ThumbnailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BEB294545CA00E5E0F2 /* ThumbnailModel.swift */; };
+		5BD02BEE2945469A00E5E0F2 /* SeriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02BED2945469A00E5E0F2 /* SeriesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,10 @@
 		5BD02BDB29451BE900E5E0F2 /* SeriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesView.swift; sourceTree = "<group>"; };
 		5BD02BDF29451C2600E5E0F2 /* SeriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewModel.swift; sourceTree = "<group>"; };
 		5BD02BE32945203800E5E0F2 /* SeriesRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesRowView.swift; sourceTree = "<group>"; };
+		5BD02BE9294544CA00E5E0F2 /* ComicsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsModel.swift; sourceTree = "<group>"; };
+		5BD02BEB294545CA00E5E0F2 /* ThumbnailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailModel.swift; sourceTree = "<group>"; };
+		5BD02BED2945469A00E5E0F2 /* SeriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesModel.swift; sourceTree = "<group>"; };
+		5BD02BEF2946147900E5E0F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +147,7 @@
 		5BD02B832944AA2D00E5E0F2 /* FinalSuperpoderesIOS */ = {
 			isa = PBXGroup;
 			children = (
+				5BD02BEF2946147900E5E0F2 /* Info.plist */,
 				5BD02B8A2944AA2F00E5E0F2 /* Preview Content */,
 				5BD02B842944AA2D00E5E0F2 /* FinalSuperpoderesIOSApp.swift */,
 				5BD02B882944AA2F00E5E0F2 /* Assets.xcassets */,
@@ -203,6 +211,9 @@
 			children = (
 				5BD02BBA2944DF4E00E5E0F2 /* StatusModel.swift */,
 				5BD02BCE2944FC2300E5E0F2 /* HerosModel.swift */,
+				5BD02BE9294544CA00E5E0F2 /* ComicsModel.swift */,
+				5BD02BEB294545CA00E5E0F2 /* ThumbnailModel.swift */,
+				5BD02BED2945469A00E5E0F2 /* SeriesModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -392,10 +403,13 @@
 				5BD02BD32945065A00E5E0F2 /* HomeViewModel.swift in Sources */,
 				5BD02BB52944B25D00E5E0F2 /* LoginView.swift in Sources */,
 				5BD02BBB2944DF4E00E5E0F2 /* StatusModel.swift in Sources */,
+				5BD02BEE2945469A00E5E0F2 /* SeriesModel.swift in Sources */,
 				5BD02BCF2944FC2300E5E0F2 /* HerosModel.swift in Sources */,
 				5BD02BBF2944F15E00E5E0F2 /* RootView.swift in Sources */,
 				5BD02BBD2944E10D00E5E0F2 /* NetworkHelper.swift in Sources */,
+				5BD02BEA294544CA00E5E0F2 /* ComicsModel.swift in Sources */,
 				5BD02BE029451C2600E5E0F2 /* SeriesViewModel.swift in Sources */,
+				5BD02BEC294545CA00E5E0F2 /* ThumbnailModel.swift in Sources */,
 				5BD02B852944AA2D00E5E0F2 /* FinalSuperpoderesIOSApp.swift in Sources */,
 				5BD02BD829450E2000E5E0F2 /* HomeRowView.swift in Sources */,
 				5BD02BC22944F4DB00E5E0F2 /* LoadingView.swift in Sources */,
@@ -583,6 +597,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FinalSuperpoderesIOS/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FinalSuperpoderesIOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -611,6 +626,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FinalSuperpoderesIOS/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FinalSuperpoderesIOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

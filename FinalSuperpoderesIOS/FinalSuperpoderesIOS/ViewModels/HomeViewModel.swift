@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 final class HomeViewModel: ObservableObject {
-    @Published var heros: [Heros]?
+    @Published var heros: [Hero]?
     @Published var status = Status.login
     
     private var suscriptor = Set<AnyCancellable>()
@@ -23,8 +23,16 @@ final class HomeViewModel: ObservableObject {
         }
     }
     
+    //MARK: FUNCION CANCELAR SUSCRIPTORES
+    func cancelAll(){
+        suscriptor.forEach { AnyCancellable in
+            AnyCancellable.cancel()
+        }
+    }
+    
     //MARK: FUNCIO PARA LLAMAR A LOS HEROES
     func getHeros() {
+        cancelAll()
         //Combine
         self.status = .loading
         
@@ -33,22 +41,23 @@ final class HomeViewModel: ObservableObject {
             .tryMap {
                 guard let response = $0.response as? HTTPURLResponse,
                       response.statusCode == 200 else {
+                    self.status = .error(error: "Error")
                     throw URLError(.badServerResponse)
                 }
                 //devolvemos el JSON
                 return $0.data
             }
-            .decode(type: [Heros].self, decoder: JSONDecoder())
+            .decode(type: HeroWelcome.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
                 case .finished:
                     self.status = Status.loaded
                 case .failure:
-                    self.status = .error(error: "Error descargando heroes")
+                    self.status = .error(error: "Error decargando datos")
                 }
             } receiveValue: { data in
-                self.heros = data
+                self.heros = data.data.result
                 print("DATA: \(data)")
             }
             .store(in: &suscriptor)
@@ -64,39 +73,21 @@ final class HomeViewModel: ObservableObject {
     //MARK: FUNCION PARA DISEÑO/TESTING
     func getHerosTesting() {
         //Crear array de HEROES
-        let hero1 = Heros(id: 1017857,
-                         name: "BATMAN",
+        let hero1 = Hero(id: 1017857,
+                         name: "Peggy Carter (Captain Carter)",
                          resultDescription: "",
-                         modified: "2022-05-03T11:41:04-0400",
-                         thumbnail: Thumbnail(path: "https://w0.peakpx.com/wallpaper/516/285/HD-wallpaper-dark-batman-batman-superheroes-artstation.jpg", thumbnailExtension: "jpg"),
-                         resourceURI: "http://gateway.marvel.com/v1/public/characters/1017857",
-                         comics: Comics(available: 16, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/comics", items: [ComicsItem(resourceURI: "http://gateway.marvel.com/v1/public/comics/55840", name: "Agent Carter: S.H.I.E.L.D. 50th Anniversary (2015) #1")], returned: 16),
-                          series: Series(id: 2, available: 8, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/series", items: [SeriesItem(resourceURI: "http://gateway.marvel.com/v1/public/series/20544", name: "Agent Carter: S.H.I.E.L.D. 50th Anniversary (2015)")], returned: 8),
-                         stories: Stories(available: 16, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/stories", items: [StoriesItem(resourceURI: "http://gateway.marvel.com/v1/public/stories/89913", name: "Captain America and the First Thirteen (2011) #1", type: "cover")], returned: 16),
-                         events: Events(available: 0, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/events", items: [], returned: 0),
-                         urls:[URLElement(type: "detail", url: "http://marvel.com/characters/3503/peggy_carter?utm_campaign=apiRef&utm_source=cfa84e8f63e43679a5f9299c92a964a7")])
-        let hero2 = Heros(id: 1017858,
-                         name: "SPIDERMAN",
+                         thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available", thumbnailExtension: Extension.jpg),
+                         resourceURI: "http://gateway.marvel.com/v1/public/characters/1017857")
+        let hero2 = Hero(id: 1011442,
+                         name: "Hit-Monkey",
                          resultDescription: "",
-                         modified: "2022-05-03T11:41:04-0400",
-                         thumbnail: Thumbnail(path: "https://img.huffingtonpost.com/asset/5c8a3eb9230000040122d972.jpeg?ops=1778_1000", thumbnailExtension: "jpg"),
-                         resourceURI: "http://gateway.marvel.com/v1/public/characters/1017857",
-                         comics: Comics(available: 16, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/comics", items: [ComicsItem(resourceURI: "http://gateway.marvel.com/v1/public/comics/55840", name: "Agent Carter: S.H.I.E.L.D. 50th Anniversary (2015) #1")], returned: 16),
-                          series: Series(id: 3, available: 8, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/series", items: [SeriesItem(resourceURI: "http://gateway.marvel.com/v1/public/series/20544", name: "Agent Carter: S.H.I.E.L.D. 50th Anniversary (2015)")], returned: 8),
-                         stories: Stories(available: 16, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/stories", items: [StoriesItem(resourceURI: "http://gateway.marvel.com/v1/public/stories/89913", name: "Captain America and the First Thirteen (2011) #1", type: "cover")], returned: 16),
-                         events: Events(available: 0, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/events", items: [], returned: 0),
-                         urls:[URLElement(type: "detail", url: "http://marvel.com/characters/3503/peggy_carter?utm_campaign=apiRef&utm_source=cfa84e8f63e43679a5f9299c92a964a7")])
-        let hero3 = Heros(id: 1017859,
-                         name: "HULK",
+                         thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/6/30/4ce69c2246c21", thumbnailExtension: Extension.jpg),
+                         resourceURI: "http://gateway.marvel.com/v1/public/characters/1011442")
+        let hero3 = Hero(id: 1017833,
+                         name: "Ghost Rider (Robbie Reyes)",
                          resultDescription: "",
-                         modified: "2022-05-03T11:41:04-0400",
-                         thumbnail: Thumbnail(path: "https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2020/05/08/15889185676201.jpg", thumbnailExtension: "jpg"),
-                         resourceURI: "http://gateway.marvel.com/v1/public/characters/1017857",
-                         comics: Comics(available: 16, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/comics", items: [ComicsItem(resourceURI: "http://gateway.marvel.com/v1/public/comics/55840", name: "Agent Carter: S.H.I.E.L.D. 50th Anniversary (2015) #1")], returned: 16),
-                          series: Series(id: 5, available: 8, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/series", items: [SeriesItem(resourceURI: "http://gateway.marvel.com/v1/public/series/20544", name: "Agent Carter: S.H.I.E.L.D. 50th Anniversary (2015)")], returned: 8),
-                         stories: Stories(available: 16, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/stories", items: [StoriesItem(resourceURI: "http://gateway.marvel.com/v1/public/stories/89913", name: "Captain America and the First Thirteen (2011) #1", type: "cover")], returned: 16),
-                         events: Events(available: 0, collectionURI: "http://gateway.marvel.com/v1/public/characters/1017857/events", items: [], returned: 0),
-                         urls:[URLElement(type: "detail", url: "http://marvel.com/characters/3503/peggy_carter?utm_campaign=apiRef&utm_source=cfa84e8f63e43679a5f9299c92a964a7")])
+                         thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/1/10/622795c13e687", thumbnailExtension: Extension.jpg),
+                         resourceURI: "http://gateway.marvel.com/v1/public/characters/1017833")
         
         self.heros = [hero1, hero2, hero3]
         //CAMBIAR ESTADO A CARGADO
