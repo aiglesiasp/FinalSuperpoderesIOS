@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Thumbnail
 struct Thumbnail: Codable {
     let path: String
-    let thumbnailExtension: Extension
+    let thumbnailExtension: String
     
     enum CodingKeys: String, CodingKey {
         case path

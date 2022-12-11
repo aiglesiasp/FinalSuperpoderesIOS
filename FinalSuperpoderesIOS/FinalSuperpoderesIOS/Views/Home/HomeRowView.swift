@@ -59,8 +59,8 @@ struct HomeRowView_Previews: PreviewProvider {
         HomeRowView(hero: Hero(id: 1,
                                name: "Hit-Monkey",
                                resultDescription: "",
-                               thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/6/30/4ce69c2246c21", thumbnailExtension: Extension.jpg),
-                               resourceURI: ""))
+                               thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/6/30/4ce69c2246c21", thumbnailExtension: "jpg"),
+                               resourceURI: "", modified: ""))
         .previewLayout(.fixed(width: /*@START_MENU_TOKEN@*/330.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/250.0/*@END_MENU_TOKEN@*/))
     }
 }

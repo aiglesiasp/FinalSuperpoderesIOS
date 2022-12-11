@@ -13,19 +13,19 @@ struct HeroFilter: Codable {
 }
 
 // MARK: - Welcome
-struct HeroWelcome: Codable{
-    let code: Int
-    let status: String
-    let copyright: String
-    let attributionText: String
-    let attributionHTML: String
-    let etag: String
-    let data: HeroDataClass
+struct HeroDataWrapper: Codable{
+    //let code: Int
+    //let status: String
+    //let copyright: String
+    //let attributionText: String
+    //let attributionHTML: String
+    //let etag: String
+    let data: HeroDataContainer
 }
 
 // MARK: - DataClass
-struct HeroDataClass: Codable {
-    let offset, limit, total, count: Int
+struct HeroDataContainer: Codable {
+    //let offset, limit, total, count: Int
     let result: [Hero]
 }
 
@@ -36,6 +36,7 @@ struct Hero: Codable, Identifiable {
     let resultDescription: String
     let thumbnail: Thumbnail
     let resourceURI: String
+    let modified: String
 }
 
 

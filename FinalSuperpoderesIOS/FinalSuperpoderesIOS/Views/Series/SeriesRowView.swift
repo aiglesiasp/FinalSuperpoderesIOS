@@ -56,8 +56,7 @@ struct SeriesRowView_Previews: PreviewProvider {
         SeriesRowView(serie: Serie(id: 20815,
                                    title: "Howling Commandos of S.H.I.E.L.D. (2015 - 2016)",
                                    description: "",
-                                   thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/6/b0/5d93a767070ed", thumbnailExtension: Extension.jpg),
-                                   resourceURI: ""))
+                                   thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/6/b0/5d93a767070ed", thumbnailExtension: "jpg")))
         .previewLayout(.fixed(width: /*@START_MENU_TOKEN@*/330.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/250.0/*@END_MENU_TOKEN@*/))
     }
 }

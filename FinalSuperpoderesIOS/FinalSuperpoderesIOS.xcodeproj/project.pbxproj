@@ -211,9 +211,9 @@
 			children = (
 				5BD02BBA2944DF4E00E5E0F2 /* StatusModel.swift */,
 				5BD02BCE2944FC2300E5E0F2 /* HerosModel.swift */,
+				5BD02BED2945469A00E5E0F2 /* SeriesModel.swift */,
 				5BD02BE9294544CA00E5E0F2 /* ComicsModel.swift */,
 				5BD02BEB294545CA00E5E0F2 /* ThumbnailModel.swift */,
-				5BD02BED2945469A00E5E0F2 /* SeriesModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

@@ -8,19 +8,19 @@
 import Foundation
 
 // MARK: - Welcome
-struct SerieWelcome: Codable{
-    let code: Int
-    let status: String
-    let copyright: String
-    let attributionText: String
-    let attributionHTML: String
-    let etag: String
-    let data: SerieDataClass
+struct SeriesDataWrapper: Codable{
+    //let code: Int
+    //let status: String
+//    let copyright: String
+//    let attributionText: String
+//    let attributionHTML: String
+//    let etag: String
+    let data: SeriesDataContainer
 }
 
 // MARK: - DataClass
-struct SerieDataClass: Codable {
-    let offset, limit, total, count: Int
+struct SeriesDataContainer: Codable {
+    //let offset, limit, total, count: Int
     let result: [Serie]
 }
 
@@ -30,5 +30,5 @@ struct Serie: Codable, Identifiable {
     let title: String
     let description: String?
     let thumbnail: Thumbnail
-    let resourceURI: String
+    //let resourceURI: String
 }

@@ -38,8 +38,9 @@ final class HomeViewModel: ObservableObject {
     func getHeros() {
         cancelAll()
         //Combine
+        print("Cambiado estado a Cargando")
         self.status = .loading
-        
+        print("INICIO DATATASK")
         URLSession.shared
             .dataTaskPublisher(for: NetworkHelper().getSessionHeroes())
             .tryMap {
@@ -48,13 +49,14 @@ final class HomeViewModel: ObservableObject {
                       response.statusCode == 200 else {
                         throw URLError(.badServerResponse)
                 }
-                //devolvemos el JSON
+                //devolvemos el datos
                 print($0.data)
                 return $0.data
             }
-            .decode(type: HeroWelcome.self, decoder: JSONDecoder())
+            .decode(type: HeroDataWrapper.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .sink { completion in
+                print("Entrando en el Completion")
                 switch completion {
                 case .finished:
                     print("Finalizado okey")
@@ -83,18 +85,18 @@ final class HomeViewModel: ObservableObject {
         let hero1 = Hero(id: 1017857,
                          name: "Peggy Carter (Captain Carter)",
                          resultDescription: "",
-                         thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available", thumbnailExtension: Extension.jpg),
-                         resourceURI: "http://gateway.marvel.com/v1/public/characters/1017857")
+                         thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available", thumbnailExtension: "jpg"),
+                         resourceURI: "http://gateway.marvel.com/v1/public/characters/1017857", modified: "")
         let hero2 = Hero(id: 1011442,
                          name: "Hit-Monkey",
                          resultDescription: "",
-                         thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/6/30/4ce69c2246c21", thumbnailExtension: Extension.jpg),
-                         resourceURI: "http://gateway.marvel.com/v1/public/characters/1011442")
+                         thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/6/30/4ce69c2246c21", thumbnailExtension: "jpg"),
+                         resourceURI: "http://gateway.marvel.com/v1/public/characters/1011442", modified: "")
         let hero3 = Hero(id: 1017833,
                          name: "Ghost Rider (Robbie Reyes)",
                          resultDescription: "",
-                         thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/1/10/622795c13e687", thumbnailExtension: Extension.jpg),
-                         resourceURI: "http://gateway.marvel.com/v1/public/characters/1017833")
+                         thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/1/10/622795c13e687", thumbnailExtension: "jpg"),
+                         resourceURI: "http://gateway.marvel.com/v1/public/characters/1017833", modified: "")
         
         self.heros = [hero1, hero2, hero3]
         //CAMBIAR ESTADO A CARGADO
