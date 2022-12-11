@@ -16,16 +16,51 @@ final class SeriesViewModel: ObservableObject {
     private var suscriptor = Set<AnyCancellable>()
     
     //INIT CON TESTING
-    init(testing: Bool = false) {
+    init(testing: Bool = false, heroId: Int) {
         if(testing) {
             getSeriesTesting()
         } else {
-            getSeries()
+            getSeries(heroId: heroId)
+        }
+    }
+    
+    //MARK: FUNCION CANCELAR SUSCRIPTORES
+    func cancelAll(){
+        suscriptor.forEach { AnyCancellable in
+            AnyCancellable.cancel()
         }
     }
     
     //MARK: FUNCIO PARA LLAMAR A LAS SERIES
-    func getSeries() {
+    func getSeries(heroId: Int) {
+        cancelAll()
+        
+        URLSession.shared
+            .dataTaskPublisher(for: NetworkHelper().getSessionHeroesSeries(heroId: heroId))
+            .tryMap {
+                guard let response = $0.response as? HTTPURLResponse,
+                      response.statusCode == 200 else {
+                    self.status = .error(error: "Error")
+                    throw URLError(.badServerResponse)
+                }
+                //devolvemos el JSON
+                return $0.data
+            }
+            .decode(type: SerieWelcome.self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    self.status = Status.loaded
+                case .failure:
+                    self.status = .error(error: "Error decargando datos")
+                }
+            } receiveValue: { data in
+                self.series = data.data.result
+                print("DATA: \(data)")
+            }
+            .store(in: &suscriptor)
+
         
     }
     

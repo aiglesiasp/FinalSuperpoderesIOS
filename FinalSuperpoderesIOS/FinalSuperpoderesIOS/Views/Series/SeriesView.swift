@@ -34,6 +34,6 @@ struct SeriesView: View {
 
 struct SeriesView_Previews: PreviewProvider {
     static var previews: some View {
-        SeriesView(seriesViewModel: SeriesViewModel(testing: true))
+        SeriesView(seriesViewModel: SeriesViewModel(testing: true, heroId: 0))
     }
 }

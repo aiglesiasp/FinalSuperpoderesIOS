@@ -15,7 +15,7 @@ struct SerieWelcome: Codable{
     let attributionText: String
     let attributionHTML: String
     let etag: String
-    let data: ComicDataClass
+    let data: SerieDataClass
 }
 
 // MARK: - DataClass
