@@ -12,7 +12,7 @@ struct HomeRowView: View {
     
     var body: some View {
         ZStack {
-            AsyncImage(url: URL(string: "\(hero.thumbnail.path).\(hero.thumbnail.thumbnailExtension)")) {image in
+            AsyncImage(url: URL(string: "\(hero.thumbnail.path)/standard_large.\(hero.thumbnail.thumbnailExtension)")) {image in
                 image
                     .resizable()
                     .cornerRadius(10)

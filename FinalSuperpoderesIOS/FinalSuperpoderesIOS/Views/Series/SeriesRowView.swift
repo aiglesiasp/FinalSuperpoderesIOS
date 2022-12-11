@@ -12,42 +12,42 @@ struct SeriesRowView: View {
     
     var body: some View {
         ZStack {
-         AsyncImage(url: URL(string: "\(serie.thumbnail.path)/standard_large.jpg")) {image in
-         image
-         .resizable()
-         .cornerRadius(10)
-         .aspectRatio(contentMode: .fit)
-         .opacity(1)
-         } placeholder: {
-         Image(systemName: "photo")
-         .resizable()
-         .cornerRadius(10)
-         .opacity(1)
-         }
-         .ignoresSafeArea()
-         
-         //TITULO
-         VStack {
-         Spacer()
-         ZStack {
-         Image(decorative: "")
-         .resizable()
-         .background(.black)
-         .frame(height: 50)
-         .opacity(0.7)
-         .cornerRadius(10)
-         
-         Text("\(serie.title)")
-         .padding(.bottom, 10)
-         .font(.title3)
-         .foregroundColor(.white)
-         .aspectRatio(contentMode: .fit)
-         .bold()
-         }
-         }
-         .padding(.bottom, 10)
-         }
-         }
+            AsyncImage(url: URL(string: "\(serie.thumbnail.path)/standard_large.\(serie.thumbnail.thumbnailExtension)")) {image in
+                image
+                    .resizable()
+                    .cornerRadius(10)
+                    .aspectRatio(contentMode: .fit)
+                    .opacity(1)
+            } placeholder: {
+                Image(systemName: "photo")
+                    .resizable()
+                    .cornerRadius(10)
+                    .opacity(1)
+            }
+            .ignoresSafeArea()
+            
+            //TITULO
+            VStack {
+                Spacer()
+                ZStack {
+                    Image(decorative: "")
+                        .resizable()
+                        .background(.black)
+                        .frame(height: 50)
+                        .opacity(0.7)
+                        .cornerRadius(10)
+                    
+                    Text("\(serie.title)")
+                        .padding(.bottom, 10)
+                        .font(.caption)
+                        .foregroundColor(.white)
+                        .aspectRatio(contentMode: .fit)
+                        .bold()
+                }
+            }
+            .padding(.bottom, 10)
+        }
+    }
     }
 
 

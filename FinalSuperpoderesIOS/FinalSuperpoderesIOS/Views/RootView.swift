@@ -18,7 +18,7 @@ struct RootView: View {
         case Status.error(error: let errorString):
             ErrorView(errorString: errorString)
         case Status.loaded:
-            HomeView(homeViewModel: HomeViewModel(testing: true))
+            HomeView(homeViewModel: HomeViewModel(testing: false))
         }
     }
 }

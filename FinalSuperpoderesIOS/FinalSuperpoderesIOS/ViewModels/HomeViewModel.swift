@@ -16,15 +16,19 @@ final class HomeViewModel: ObservableObject {
     
     //INIT CON TESTING
     init(testing: Bool = false) {
+        print("INICIO CLASE HOMEVIEWMODEL")
         if(testing) {
+            print("Clase Testing HomeViewModel")
             getHerosTesting()
         } else {
+            print("IClase GETHEROS RED HomeViewModel")
             getHeros()
         }
     }
     
     //MARK: FUNCION CANCELAR SUSCRIPTORES
     func cancelAll(){
+        print("Cancelo Suscriptor")
         suscriptor.forEach { AnyCancellable in
             AnyCancellable.cancel()
         }
@@ -39,12 +43,13 @@ final class HomeViewModel: ObservableObject {
         URLSession.shared
             .dataTaskPublisher(for: NetworkHelper().getSessionHeroes())
             .tryMap {
+                print("Entrando en el MAP")
                 guard let response = $0.response as? HTTPURLResponse,
                       response.statusCode == 200 else {
-                    self.status = .error(error: "Error")
-                    throw URLError(.badServerResponse)
+                        throw URLError(.badServerResponse)
                 }
                 //devolvemos el JSON
+                print($0.data)
                 return $0.data
             }
             .decode(type: HeroWelcome.self, decoder: JSONDecoder())
@@ -52,13 +57,15 @@ final class HomeViewModel: ObservableObject {
             .sink { completion in
                 switch completion {
                 case .finished:
+                    print("Finalizado okey")
                     self.status = Status.loaded
                 case .failure:
+                    print("Finalizado CON ERROR")
                     self.status = .error(error: "Error decargando datos")
                 }
             } receiveValue: { data in
-                self.heros = data.data.result
                 print("DATA: \(data)")
+                self.heros = data.data.result
             }
             .store(in: &suscriptor)
 
