@@ -12,7 +12,7 @@ struct SeriesRowView: View {
     
     var body: some View {
         ZStack {
-            AsyncImage(url: URL(string: "\(serie.thumbnail.path)/standard_large.\(serie.thumbnail.thumbnailExtension)")) {image in
+            AsyncImage(url: URL(string: "\(serie.thumbnail.path)/landscape_small.\(serie.thumbnail.thumbnailExtension)")) {image in
                 image
                     .resizable()
                     .cornerRadius(10)
@@ -22,6 +22,7 @@ struct SeriesRowView: View {
                 Image(systemName: "photo")
                     .resizable()
                     .cornerRadius(10)
+                    .aspectRatio(contentMode: .fit)
                     .opacity(1)
             }
             .ignoresSafeArea()
@@ -57,6 +58,6 @@ struct SeriesRowView_Previews: PreviewProvider {
                                    title: "Howling Commandos of S.H.I.E.L.D. (2015 - 2016)",
                                    description: "",
                                    thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/6/b0/5d93a767070ed", thumbnailExtension: "jpg")))
-        .previewLayout(.fixed(width: /*@START_MENU_TOKEN@*/330.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/250.0/*@END_MENU_TOKEN@*/))
+        .previewLayout(.fixed(width: /*@START_MENU_TOKEN@*/330.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/300.0/*@END_MENU_TOKEN@*/))
     }
 }

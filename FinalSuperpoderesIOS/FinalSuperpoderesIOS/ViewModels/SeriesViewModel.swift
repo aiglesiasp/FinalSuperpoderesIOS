@@ -40,7 +40,6 @@ final class SeriesViewModel: ObservableObject {
             .tryMap {
                 guard let response = $0.response as? HTTPURLResponse,
                       response.statusCode == 200 else {
-                    self.status = .error(error: "Error")
                     throw URLError(.badServerResponse)
                 }
                 //devolvemos el JSON
@@ -52,11 +51,11 @@ final class SeriesViewModel: ObservableObject {
                 switch completion {
                 case .finished:
                     self.status = Status.loaded
-                case .failure:
-                    self.status = .error(error: "Error decargando datos")
+                case .failure(let error):
+                    self.status = .error(error: "Error decargando datos del tipo \(error)")
                 }
             } receiveValue: { data in
-                self.series = data.data.result
+                self.series = data.data.results
                 print("DATA: \(data)")
             }
             .store(in: &suscriptor)

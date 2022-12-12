@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5BB6BE4D29469707008B6E80 /* FinalSuperpoderesIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB6BE4C29469707008B6E80 /* FinalSuperpoderesIOSTests.swift */; };
+		5BB6BE7729475D58008B6E80 /* SeriesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB6BE7629475D58008B6E80 /* SeriesDetailView.swift */; };
 		5BD02B852944AA2D00E5E0F2 /* FinalSuperpoderesIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD02B842944AA2D00E5E0F2 /* FinalSuperpoderesIOSApp.swift */; };
 		5BD02B892944AA2F00E5E0F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD02B882944AA2F00E5E0F2 /* Assets.xcassets */; };
 		5BD02B8C2944AA2F00E5E0F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD02B8B2944AA2F00E5E0F2 /* Preview Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		5BB6BE4A29469706008B6E80 /* FinalSuperpoderesIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalSuperpoderesIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB6BE4C29469707008B6E80 /* FinalSuperpoderesIOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalSuperpoderesIOSTests.swift; sourceTree = "<group>"; };
+		5BB6BE7629475D58008B6E80 /* SeriesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailView.swift; sourceTree = "<group>"; };
 		5BD02B812944AA2D00E5E0F2 /* FinalSuperpoderesIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalSuperpoderesIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BD02B842944AA2D00E5E0F2 /* FinalSuperpoderesIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalSuperpoderesIOSApp.swift; sourceTree = "<group>"; };
 		5BD02B882944AA2F00E5E0F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			children = (
 				5BD02BDB29451BE900E5E0F2 /* SeriesView.swift */,
 				5BD02BE32945203800E5E0F2 /* SeriesRowView.swift */,
+				5BB6BE7629475D58008B6E80 /* SeriesDetailView.swift */,
 			);
 			path = Series;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				5BD02BCB2944FB6300E5E0F2 /* HomeView.swift in Sources */,
 				5BD02BD32945065A00E5E0F2 /* HomeViewModel.swift in Sources */,
 				5BD02BB52944B25D00E5E0F2 /* LoginView.swift in Sources */,
+				5BB6BE7729475D58008B6E80 /* SeriesDetailView.swift in Sources */,
 				5BD02BBB2944DF4E00E5E0F2 /* StatusModel.swift in Sources */,
 				5BD02BEE2945469A00E5E0F2 /* SeriesModel.swift in Sources */,
 				5BD02BCF2944FC2300E5E0F2 /* HerosModel.swift in Sources */,

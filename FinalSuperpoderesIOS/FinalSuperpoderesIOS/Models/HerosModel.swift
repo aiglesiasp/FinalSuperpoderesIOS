@@ -26,14 +26,14 @@ struct HeroDataWrapper: Codable{
 // MARK: - DataClass
 struct HeroDataContainer: Codable {
     //let offset, limit, total, count: Int
-    let result: [Hero]
+    let results: [Hero]
 }
 
 // MARK: - HERO
 struct Hero: Codable, Identifiable {
     let id: Int
     let name: String
-    let resultDescription: String
+    let description: String
     let thumbnail: Thumbnail
     let resourceURI: String
     let modified: String

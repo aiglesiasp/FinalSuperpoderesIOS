@@ -16,7 +16,6 @@ final class RootViewModel: ObservableObject {
     
     //MARK: FUNCION TEST LOGIN
     func loginSimulator() {
-        print("CARGANDO")
         self.status = .loading
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.status = .loaded
@@ -25,7 +24,6 @@ final class RootViewModel: ObservableObject {
     
     //MARK: FUNCION CERRAR SESION
     func closeSession() {
-        print("CERRANDO SESION")
         self.status = .login
     }
 }

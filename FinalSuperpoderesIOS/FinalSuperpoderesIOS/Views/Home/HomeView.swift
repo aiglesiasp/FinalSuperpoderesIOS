@@ -18,9 +18,9 @@ struct HomeView: View {
                     ForEach(heros) { hero in
                         NavigationLink {
                             //Navegar al detalle de las series testing
-                            SeriesView(seriesViewModel: SeriesViewModel(testing: false, heroId: 0))
+                            //SeriesView(seriesViewModel: SeriesViewModel(testing: false, heroId: 0))
                             //Navegar al detalle de las series RED
-                            //SeriesView(seriesViewModel: SeriesViewModel(heroId: hero.id))
+                            SeriesView(seriesViewModel: SeriesViewModel(heroId: hero.id))
                         } label: {
                             //Detalle de la row
                             HomeRowView(hero: hero)

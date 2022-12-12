@@ -21,7 +21,7 @@ struct SeriesDataWrapper: Codable{
 // MARK: - DataClass
 struct SeriesDataContainer: Codable {
     //let offset, limit, total, count: Int
-    let result: [Serie]
+    let results: [Serie]
 }
 
 // MARK: - Comics

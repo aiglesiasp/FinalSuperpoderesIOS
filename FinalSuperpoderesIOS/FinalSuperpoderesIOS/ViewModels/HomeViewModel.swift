@@ -16,19 +16,15 @@ final class HomeViewModel: ObservableObject {
     
     //INIT CON TESTING
     init(testing: Bool = false) {
-        print("INICIO CLASE HOMEVIEWMODEL")
         if(testing) {
-            print("Clase Testing HomeViewModel")
             getHerosTesting()
         } else {
-            print("IClase GETHEROS RED HomeViewModel")
             getHeros()
         }
     }
     
     //MARK: FUNCION CANCELAR SUSCRIPTORES
     func cancelAll(){
-        print("Cancelo Suscriptor")
         suscriptor.forEach { AnyCancellable in
             AnyCancellable.cancel()
         }
@@ -38,13 +34,10 @@ final class HomeViewModel: ObservableObject {
     func getHeros() {
         cancelAll()
         //Combine
-        print("Cambiado estado a Cargando")
         self.status = .loading
-        print("INICIO DATATASK")
         URLSession.shared
             .dataTaskPublisher(for: NetworkHelper().getSessionHeroes())
             .tryMap {
-                print("Entrando en el MAP")
                 guard let response = $0.response as? HTTPURLResponse,
                       response.statusCode == 200 else {
                         throw URLError(.badServerResponse)
@@ -56,18 +49,14 @@ final class HomeViewModel: ObservableObject {
             .decode(type: HeroDataWrapper.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .sink { completion in
-                print("Entrando en el Completion")
                 switch completion {
                 case .finished:
-                    print("Finalizado okey")
                     self.status = Status.loaded
-                case .failure:
-                    print("Finalizado CON ERROR")
-                    self.status = .error(error: "Error decargando datos")
+                case .failure(let error):
+                    self.status = .error(error: "Error decargando datos de tipo \(error)")
                 }
             } receiveValue: { data in
-                print("DATA: \(data)")
-                self.heros = data.data.result
+                self.heros = data.data.results
             }
             .store(in: &suscriptor)
 
@@ -84,17 +73,17 @@ final class HomeViewModel: ObservableObject {
         //Crear array de HEROES
         let hero1 = Hero(id: 1017857,
                          name: "Peggy Carter (Captain Carter)",
-                         resultDescription: "",
+                         description: "",
                          thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available", thumbnailExtension: "jpg"),
                          resourceURI: "http://gateway.marvel.com/v1/public/characters/1017857", modified: "")
         let hero2 = Hero(id: 1011442,
                          name: "Hit-Monkey",
-                         resultDescription: "",
+                         description: "",
                          thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/6/30/4ce69c2246c21", thumbnailExtension: "jpg"),
                          resourceURI: "http://gateway.marvel.com/v1/public/characters/1011442", modified: "")
         let hero3 = Hero(id: 1017833,
                          name: "Ghost Rider (Robbie Reyes)",
-                         resultDescription: "",
+                         description: "",
                          thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/1/10/622795c13e687", thumbnailExtension: "jpg"),
                          resourceURI: "http://gateway.marvel.com/v1/public/characters/1017833", modified: "")
         

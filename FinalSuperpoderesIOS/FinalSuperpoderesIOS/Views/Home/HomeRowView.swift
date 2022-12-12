@@ -12,7 +12,7 @@ struct HomeRowView: View {
     
     var body: some View {
         ZStack {
-            AsyncImage(url: URL(string: "\(hero.thumbnail.path)/standard_large.\(hero.thumbnail.thumbnailExtension)")) {image in
+            AsyncImage(url: URL(string: "\(hero.thumbnail.path)/landscape_small.\(hero.thumbnail.thumbnailExtension)")) {image in
                 image
                     .resizable()
                     .cornerRadius(10)
@@ -22,6 +22,7 @@ struct HomeRowView: View {
                 Image(systemName: "photo")
                     .resizable()
                     .cornerRadius(10)
+                    .aspectRatio(contentMode: .fit)
                     .opacity(1)
             }
             .ignoresSafeArea()
@@ -58,9 +59,9 @@ struct HomeRowView_Previews: PreviewProvider {
     static var previews: some View {
         HomeRowView(hero: Hero(id: 1,
                                name: "Hit-Monkey",
-                               resultDescription: "",
+                               description: "",
                                thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/6/30/4ce69c2246c21", thumbnailExtension: "jpg"),
                                resourceURI: "", modified: ""))
-        .previewLayout(.fixed(width: /*@START_MENU_TOKEN@*/330.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/250.0/*@END_MENU_TOKEN@*/))
+        .previewLayout(.fixed(width: /*@START_MENU_TOKEN@*/330.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/300.0/*@END_MENU_TOKEN@*/))
     }
 }
