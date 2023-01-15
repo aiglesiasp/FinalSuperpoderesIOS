@@ -15,11 +15,13 @@ struct LoadingView: View {
             Image(decorative: "marvelFondo")
                 .resizable()
                 .opacity(1)
+                .id(1)
             //Imagen de FONDO Negra
             Image(decorative: "")
                 .resizable()
                 .background(.black)
                 .opacity(0.3)
+                .id(2)
             
             //MARK: TITULO
             //TEXTO
@@ -31,16 +33,21 @@ struct LoadingView: View {
                     .frame(width: 300)
                     .opacity(0.4)
                     .padding(.top, 150)
+                    .id(3)
                 Spacer()
+                    .id(5)
                 
                 Spacer()
+                    .id(6)
                 Text("LOADING...")
                     .font(.title3)
                     .background(.red)
                     .frame(height: 30)
                     .foregroundColor(.black)
                     .bold()
+                    .id(4)
                 Spacer()
+                    .id(7)
             }
         }
         .ignoresSafeArea()

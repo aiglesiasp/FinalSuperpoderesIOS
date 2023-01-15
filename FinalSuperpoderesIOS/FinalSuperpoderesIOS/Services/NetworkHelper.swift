@@ -40,9 +40,6 @@ struct NetworkHelper {
     
     //MARK: FUNCION CAPTURAR HEROES
     func getSessionHeroes() -> URLRequest {
-        //Creo URL
-        /*let url = URL (string:  "\(server)\(Endpoints.heroesList.rawValue)?apikey=\(ParametrosEntrada.apikey.rawValue)&ts=\(ParametrosEntrada.ts.rawValue)&hash=\(ParametrosEntrada.hash.rawValue)&orderBy=-modified")
-        */
         let url = URL (string:"https://gateway.marvel.com/v1/public/characters?apikey=cfa84e8f63e43679a5f9299c92a964a7&ts=1&hash=6ee3533574aa152e469b939894ec2f49&orderBy=-modified")
         var request = URLRequest(url: url!)
         request.httpMethod = HTTPMethods.get

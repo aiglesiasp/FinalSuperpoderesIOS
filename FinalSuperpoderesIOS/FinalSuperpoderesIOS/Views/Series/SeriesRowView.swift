@@ -25,6 +25,7 @@ struct SeriesRowView: View {
                     .aspectRatio(contentMode: .fit)
                     .opacity(1)
             }
+            .id(1)
             .ignoresSafeArea()
             
             //TITULO
@@ -37,6 +38,7 @@ struct SeriesRowView: View {
                         .frame(height: 50)
                         .opacity(0.7)
                         .cornerRadius(10)
+                        .id(2)
                     
                     Text("\(serie.title)")
                         .padding(.bottom, 10)
@@ -44,6 +46,7 @@ struct SeriesRowView: View {
                         .foregroundColor(.white)
                         .aspectRatio(contentMode: .fit)
                         .bold()
+                        .id(3)
                 }
             }
             .padding(.bottom, 10)

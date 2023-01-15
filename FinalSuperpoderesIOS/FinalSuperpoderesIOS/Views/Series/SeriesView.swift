@@ -26,7 +26,9 @@ struct SeriesView: View {
                     }
                 }
             }
+            .id(2)
         }
+        .id(1)
         
     }
 }

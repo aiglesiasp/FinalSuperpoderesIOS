@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum Status {
+enum Status: Equatable {
     case login, loading, loaded, error(error: String)
 }

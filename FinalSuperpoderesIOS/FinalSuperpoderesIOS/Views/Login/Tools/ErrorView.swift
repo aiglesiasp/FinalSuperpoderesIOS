@@ -22,11 +22,13 @@ struct ErrorView: View {
             Image(decorative: "marvelFondo")
                 .resizable()
                 .opacity(1)
+                .id(1)
             //Imagen de FONDO Negra
             Image(decorative: "")
                 .resizable()
                 .background(.black)
                 .opacity(0.3)
+                .id(2)
             
             //MARK: TITULO
             //TEXTO
@@ -38,13 +40,16 @@ struct ErrorView: View {
                     .frame(width: 300)
                     .opacity(0.4)
                     .padding(.top, 150)
+                    .id(3)
                 Spacer()
+                    .id(7)
                 Text(errorString)
                     .font(.title3)
                     .background(.red)
                     .frame(height: 30)
                     .foregroundColor(.black)
                     .bold()
+                    .id(4)
                 //BOTON PARA ENTRAR
                 Button {
                     //volver login
@@ -61,8 +66,11 @@ struct ErrorView: View {
                         .background(.white.opacity(0.9))
                         .cornerRadius(20)
                         .shadow(radius: 1.0, x:10, y:10)
+                        .id(6)
                 }
+                .id(5)
                 Spacer()
+                    .id(8)
             }
         }
         .ignoresSafeArea()

@@ -25,6 +25,8 @@ struct SeriesDetailView: View {
                     .aspectRatio(contentMode: .fit)
                     .opacity(1)
             }
+            .id(1)
+            .ignoresSafeArea()
             
             VStack {
                 //TITULO
@@ -35,12 +37,14 @@ struct SeriesDetailView: View {
                         .frame(height: 50)
                         .opacity(1)
                         .cornerRadius(10)
+                        .id(2)
                     
                     Text("\(serie.title)")
                         .font(.caption)
                         .foregroundColor(.white)
                         .aspectRatio(contentMode: .fit)
                         .bold()
+                        .id(3)
                 }
                 
                 Spacer()
@@ -49,9 +53,10 @@ struct SeriesDetailView: View {
                     Image(decorative: "")
                         .resizable()
                         .background(.black)
-                        .frame(height: 200)
-                        .opacity(0.7)
+                        .frame(height: 100)
+                        .opacity(0.5)
                         .cornerRadius(10)
+                        .id(4)
                     
                     if let description = serie.description {
                         Text("\(description)")
@@ -59,14 +64,18 @@ struct SeriesDetailView: View {
                             .foregroundColor(.white)
                             .aspectRatio(contentMode: .fit)
                             .bold()
+                            .id(5)
                         
                     }
                     
                 }
+                .ignoresSafeArea()
                     
                 }
+            
                 
             }
+        
         }
     }
 

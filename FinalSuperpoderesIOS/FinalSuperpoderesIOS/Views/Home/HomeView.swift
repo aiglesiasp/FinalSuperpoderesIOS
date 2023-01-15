@@ -29,6 +29,7 @@ struct HomeView: View {
                     }
                 }
             }
+            .id(2)
             .toolbar{
                 ToolbarItem (placement: .navigationBarTrailing) {
                     Button {
@@ -38,15 +39,19 @@ struct HomeView: View {
                             Image(systemName: "xmark.circle")
                                 .font(.caption)
                                 .foregroundColor(.blue)
+                                .id(4)
                             Text("Close Session")
                                 .font(.caption)
                                 .foregroundColor(.blue)
+                                .id(5)
                         }
                         
                     }
+                    .id(3)
                 }
             }
         }
+        .id(1)
     }
 }
 

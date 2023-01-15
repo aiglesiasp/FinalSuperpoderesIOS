@@ -21,11 +21,13 @@ struct LoginView: View {
             Image(decorative: "marvelFondo")
                 .resizable()
                 .opacity(1)
+                .id(1)
             //Imagen de FONDO Negra
             Image(decorative: "")
                 .resizable()
                 .background(.black)
                 .opacity(0.3)
+                .id(2)
             
             //MARK: TITULO
             //TEXTO
@@ -37,7 +39,9 @@ struct LoginView: View {
                     .frame(width: 300)
                     .opacity(0.4)
                     .padding(.top, 150)
+                    .id(3)
                 Spacer()
+                    .id(6)
                 //BOTON PARA ENTRAR
                 Button {
                     //TODO: Pasar a la vista de HOME
@@ -55,14 +59,18 @@ struct LoginView: View {
                         .background(.white.opacity(0.9))
                         .cornerRadius(20)
                         .shadow(radius: 1.0, x:10, y:10)
+                        .id(4)
                 }
+                .id(5)
                 Spacer()
+                    .id(7)
 
                 }
             }
         .ignoresSafeArea()
         
     }
+    
 }
 
 
